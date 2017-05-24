@@ -13,11 +13,13 @@ setup(
     packages=find_packages(),
     entry_points = {
         'console_scripts': [
-            'hwinfo = hwinfo.tools.inspector:main',
+            'hwinfo = hwinfo.tools.inspector:main [SSH]',
         ]
     },
     install_requires = [
-        'paramiko',
         'prettytable',
     ],
+    extras_require={
+      'SSH': ["paramiko"]
+    }
     )
